@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+
+<link rel="stylesheet" href="styles.css">
+<head>
+    <title>Document</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/97ca1fd543.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="header">
+        <header>
+            <!-- <h1 id="siteName">Pomodoro Timer</h2> -->
+            <div class="buttons">
+                <i class="fa-solid fa-stopwatch fa-xl" id="timer" title="Timer"></i>
+                <i class="fa-solid fa-sliders fa-xl" id="settings" title="Settings"></i>
+            </div>
+        </header>
+    </div>
+    <div id="timeContainer">
+        <div id="topBtns">
+            <button id="pomoBtn" class="timerBtns">Pomodoro</button>
+            <button id="shortBrk" class="timerBtns">Short Break</button>
+            <button id="longBrk" class="timerBtns">Long Break</button>
+        </div>
+        <div id="timeDisplay">25:00</div>
+        <div id="bottomBtns">
+            <button id="startBtn" class="timerBtns">Start</button>
+            <button id="pauseBtn" class="timerBtns">Pause</button>
+        </div>
+    </div> 
+    <div class="settingsContainer">
+        <div class="preferencesBtns">
+            <nav>
+                <a onclick="openTab(event, 'user')" class="tabBtns" id="defaultOpen"><i class="fa fa-user"></i></a>
+                <a onclick="openTab(event, 'general')" class="tabBtns"><i class="fa fa-gears"></i></a>
+                <a onclick="openTab(event, 'about')" class="tabBtns"><i class="fa-solid fa-circle-info"></i></a>
+            </nav>
+        </div>
+        <div class="preferencesMenu">
+            <div class="tabContent" id="user">
+                <h1>Account</h1>
+                <div class="authButtons">
+                    <button type="button" id="signInBtn">Sign In</button>
+                    <button type="button" id="signUpBtn" >Sign Up</button>
+                    <button type="button" id="logOutBtn" class="disabled">Log Out</button>
+                </div>
+            </div>
+            <div class="tabContent" id="general">
+                <h1>Preferences</h1>
+                <div class="timerSettings">
+                    <h3>Timer Settings</h3>
+                    <h5 class="editTitle">Pomodoro:</h5>
+                    <input class="timerEdit" id="pomo" value="25"></input>
+                    <h5 class="editTitle">Short Break:</h5>
+                    <input class="timerEdit" id="short" value="5"></input>
+                    <h5 class="editTitle">Long Break:</h5>
+                    <input class="timerEdit" id="long" value="15"></input>
+                    <button id="saveBtnTimer">Save Changes</button>
+
+                    <h3>Theme Settings</h3>
+                    <div class="dropdown">
+                        <div class="select">
+                            <span class="selected">Solid</span>
+                            <div class="caret"></div>
+                        </div>
+                        <ul class="menu">
+                            <li onclick="displayThemeMenu('solidMenu', 'solidColor')" id="solid">Solid</li>
+                            <li onclick="displayThemeMenu('wallpaperMenu', 'wallpaperChoice')" class="activated" id="wallpaper">Wallpaper</li>
+                        </ul>
+                    </div>
+                    <div class="themeMenu">
+                        <h5 class="solidOptions" id="solidMenu">Choose color:</h5>
+                        <input type="color" class="solidOptions" id="solidColor"></input>
+
+                        <h5 class="wallOptions" id="wallpaperMenu">Choose wallpaper:</h5>
+                        <input type="file" class="wallOptions" id="wallpaperChoice"></input>
+                        <button id="saveBtnTheme">Save Changes</button>
+                    </div>
+                </div>
+            </div>
+            <div class="tabContent" id="about">
+                <h1>About</h1>
+                <p></p>
+            </div>
+        </div>
+        <audio id="clickSound">
+            <source src="clickSound.mp3" type="audio/mpeg">
+    </div>
+    <script src="https://cdn.auth0.com/js/auth0-spa-js/2.0/auth0-spa-js.production.js"></script>
+    <script src="index.js"></script>
+</body>

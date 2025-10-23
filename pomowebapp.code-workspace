@@ -1,0 +1,13 @@
+{
+	"folders": [
+		{
+			"path": "../JavaScript"
+		},
+		{
+			"path": "."
+		}
+	],
+	"settings": {
+		"liveServer.settings.multiRootWorkspaceName": "Pomodoro"
+	}
+}
